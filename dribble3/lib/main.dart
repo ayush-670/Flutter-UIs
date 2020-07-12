@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 IconButton(
                   icon: Icon(Icons.menu),
-                  onPressed: () {},
+                  onPressed: () { },
                 ),
                 Container(
                   height: MediaQuery.of(context).size.height * 0.06,
