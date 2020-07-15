@@ -34,11 +34,13 @@ class _MyHomePageState extends State<MyHomePage>
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFd4dad0),
       body: ListView(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(left: 20.0,right: 20.0, top: 25.0),
-            child: Row(              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 25.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
                   'Browse',
@@ -52,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage>
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+            padding: EdgeInsets.only(left: 10.0, top: 20.0),
             child: TabBar(
               labelStyle:
                   TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
@@ -97,30 +99,136 @@ class _MyHomePageState extends State<MyHomePage>
                 ),
               ],
             ),
-
-            
           ),
-         
-          Container(
-              height: MediaQuery.of(context).size.height*0.4,
+          Padding(
+            padding: EdgeInsets.only(
+              left: 15.0,
+              right: 15.0,
+              top: 15.0,
+            ),
+            child: Container(
+              height: MediaQuery.of(context).size.height,
               child: TabBarView(
                 controller: tabController,
                 children: <Widget>[
-                 Content(),
-                 Container(
-                   height: 25.0,
-                   width: 25.0,
-                   color: Colors.orange,
-                 ),
-                 Container(
-                   height: 25.0,
-                   width: 25.0,
-                   color: Colors.indigo,
-                 ),
-                  
+                  Content(),
+                  Content(),
+                  Content(),
                 ],
               ),
             ),
+            //  s
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.18,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Color(0xFF121537),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(45.0),
+                topRight: Radius.circular(45.0),
+              ),
+            ),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        'Popular artists',
+                        style: TextStyle(
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 15.0, top: 5.0),
+                        child: Container(
+                          height: 2.0,
+                          width: 60.0,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(8.0),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Row(
+                        
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.only(right: 10.0),
+                            child: Container(
+                              height: 40.0,
+                              width: 40.0,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(image: AssetImage('assets/dp.png'),fit: BoxFit.cover),
+                                color: Colors.white,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(8.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                           Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Container(
+                              height: 40.0,
+                              width: 40.0,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(image: AssetImage('assets/dp.png'),fit: BoxFit.cover),
+                                color: Colors.white,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(8.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                           Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Container(
+                              
+                              height: 40.0,
+                              width: 40.0,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(image: AssetImage('assets/dp.png'),fit: BoxFit.cover),
+                                color: Colors.white,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(8.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                            padding: EdgeInsets.only(left: 10.0),
+                            child: Container(
+                              height: 40.0,
+                              width: 40.0,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFf04970),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(8.0),
+                                ),
+                              ),
+                              child: IconButton(icon: Icon(Icons.chevron_right, color: Colors.white,), onPressed: (){}),
+                            ),
+                          ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
